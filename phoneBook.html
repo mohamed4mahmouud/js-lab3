@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Book</title>
+  </head>
+  <body>
+    <script>
+      var contacts = [];
+
+      while (true) {
+        var operation = prompt("Enter operation ");
+        if (operation === "add") {
+          add();
+        } else if (operation === "search") {
+          search();
+        } else if (operation == null) {
+          console.log(contacts);
+          break;
+        }
+      }
+
+      function add() {
+        var contactName = prompt("Enter name");
+        var phoneNumber = prompt("Enter Phone Number");
+
+        var phoneBook = {
+          name: contactName,
+          phoneNumber: phoneNumber,
+        };
+
+        contacts.push(phoneBook);
+      }
+
+      function search() {
+        var msg = prompt("Enter name or phone number");
+
+        var contactExist = contacts.find(function (el) {
+          return el.name === msg || el.phoneNumber === msg;
+        });
+        if (contactExist) {
+          alert("contact exist");
+        } else {
+          alert("Contact not found");
+        }
+      }
+    </script>
+  </body>
+</html>

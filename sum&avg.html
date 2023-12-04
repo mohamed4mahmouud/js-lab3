@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calc avg</title>
+  </head>
+  <body>
+    <script>
+      var numValues = parseInt(
+        prompt("Enter how many numbers you want to get the sum and average of:")
+      );
+
+      var numbers = [];
+
+      for (let i = 0; i < numValues; i++) {
+        var num = Number(prompt(`Enter number ${i + 1}:`));
+        numbers.push(num);
+      }
+
+      var sum = numbers.reduce((acc, crr) => acc + crr, 0);
+      var avg = sum / numbers.length;
+
+      alert(`sum: ${sum}`);
+      alert(`avg: ${avg}`);
+    </script>
+  </body>
+</html>

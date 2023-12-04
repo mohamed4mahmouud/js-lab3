@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>calc</title>
+  </head>
+  <body>
+    <script>
+      //lab2 Calc
+      let result = 0;
+      var num1 = Number(prompt("Enter First Number"));
+      var operation = prompt("Enter an operation");
+      var num2 = Number(prompt("Enter Second Number"));
+      calc(num1, num2);
+      function calc(num1, num2) {
+        switch (operation) {
+          case "sum":
+            result = num1 + num2;
+            alert(result);
+            break;
+          case "multi":
+            result = num1 * num2;
+            alert(result);
+            break;
+          case "subtract":
+            result = num1 - num2;
+            alert(result);
+            break;
+          case "division":
+            result = num1 / num2;
+            alert(result);
+            break;
+          case "moduls":
+            result = num1 % num2;
+            alert(result);
+            break;
+          default:
+            result = "Invalid operation";
+            alert(result);
+        }
+      }
+      if (result == "null") {
+      } else {
+        while (result != "null") {
+          var num1 = result;
+          var operate = prompt("Enter the Operation");
+          if (operate === null) {
+            break;
+          }
+          var num2 = Number(prompt("Enter second number"));
+          if (num2 === null) {
+            break;
+          }
+          calc(num1, num2);
+        }
+      }
+    </script>
+  </body>
+</html>
